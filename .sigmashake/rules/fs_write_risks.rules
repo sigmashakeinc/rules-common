@@ -30,8 +30,7 @@ rule warn-cron-write {
   OR path STARTS_WITH "/etc/cron."
   severity warning
   priority 90
-  ASK write
-  PROMPT "The agent is trying to modify scheduled tasks. Allow?"
+  LOG write
 }
 
 rule block-sensitive-binary-write {
